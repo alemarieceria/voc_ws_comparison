@@ -1,4 +1,4 @@
-# Water Sample ETL Pipeline
+# Maui County Water Samples
 
 ## Goals
 

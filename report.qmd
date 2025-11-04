@@ -1,5 +1,5 @@
 ---
-title: "Water Sample ETL Pipeline"
+title: "Maui County Water Samples"
 author: "Alemarie Ceria"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 format: 
@@ -14,13 +14,15 @@ execute:
 output-file: index.html
 ---
 
-## Webscraping Methodology
+## Get Coordinates of Water Sampling Locations
 
 ### Goal
 
 Webscrape and extract the coordinates of all points within the [Department of Water Supply - Water Advisory Area Address Locator Web App](https://experience.arcgis.com/experience/414545b8dd0b4117a1ec2727007a38df/page/Page).
 
-### Find Where to Pull the Data From
+### Tracing Web App Requests to APIs
+
+#### Locate Feature Service Endpoints
 
 ![](assets/img/mdws_water_advisory_area_address_locator_app.png){fig-align="center"}
 
@@ -40,7 +42,7 @@ Here, we can see that the water sample data is being pulled from the `SAMPLES` f
 
 From there, we can see the three layers listed and their IDs. We can also go to the map viewer to confirm if this is actually the data we want to be requesting. 
 
-### Build Query and Request Water Sample Data
+#### Build Queries
 
 Here are the feature layer base URLs:
 
@@ -53,13 +55,13 @@ You can see the parameters you can specify in your query by:
 1.  Going to the end of one of the feature layers above
 2.  Clicking Query (*Example URL*: <https://services3.arcgis.com/fsrDo0QMPlK9CkZD/ArcGIS/rest/services/SAMPLES/FeatureServer/0/query>)
 
-## ETL Pipeline Overview
+### Data Workflow Overview
 
 The figure below shows the automated `{targets}` pipeline used to
 download, process, and export water sample data from the Maui County
 Department of Water Supply ArcGIS feature service.
 
-### Workflow Summary
+#### Summary
 
 1. **Define layers:** The `feature_layers` target lists the three ArcGIS feature server layers (hydrant, property, WTP/tank).
 2. **Fetch counts:** `layer_counts` queries how many records each layer contains.
@@ -69,7 +71,7 @@ Department of Water Supply ArcGIS feature service.
 6. **Export:** `exported_ws_data` writes the final shapefile to `/data/03_output/merged_water_samples/`.
 
 Each circle in the graph represents a target (a single object or file),
-and each square represents **dynamic branches** that run independently for each layer.
+and each square represents **dynamic branches** that run independently for each layer. See `R/` folder in repository for scripts used in pipeline.
 
 ```{r}
 #| echo: false
@@ -97,7 +99,9 @@ targets::tar_config_set(script = "_targets.R")
 tar_visnetwork(targets_only = TRUE, label = "time")
 ```
 
-## Interactive Table
+### Outputs
+
+#### Interactive Table
 
 ```{r}
 #| echo: false
@@ -137,7 +141,9 @@ create_datatable <- function(df) {
 create_datatable(df)
 ```
 
-## Interactive Map
+#### Interactive Map
+
+Hover over a point to see location name or click on it to view more details:
 
 ```{r}
 #| echo: false
