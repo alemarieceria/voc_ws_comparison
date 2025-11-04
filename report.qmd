@@ -322,7 +322,6 @@ Use the simple form (**screenshots welcome**):
 - 🧹 [Create a Task/Improvement](https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=task.yml){target="_blank"}
 :::
 
-
 ## Reproducibility
 
 This project uses **`renv`** for dependency management. 
