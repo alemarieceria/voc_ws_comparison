@@ -1,0 +1,5 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-60819-1","380-60819-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/27/2023","124900","","","PWS 215 Thompson Rd Hyd 779","380-60819-1"
+"MWHSample","380-60819-2","380-60819-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/27/2023","131300","","","PWS 215 Kula Kamaole Tank","380-60819-1"
+"MWHSample","380-60819-3","380-60819-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/27/2023","133600","","","PWS 215 Kamaole Rd Hyd 710","380-60819-1"
+"MWHSample","380-60819-4","380-60819-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/27/2023","104600","","","PWS 215 Polipoli Rd Hyd 583","380-60819-1"

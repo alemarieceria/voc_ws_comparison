@@ -1,0 +1,6 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-62890-1","380-62890-1","HI0000214","TP050","021","LABMWH","STATE","GE","RT","N","100","09/12/2023","105200","","","PWS214 Lahaina TP Raw Water","380-62890-1"
+"MWHSample","380-62890-2","380-62890-1","HI0000214","TP050","021","LABMWH","STATE","GE","RT","N","100","09/12/2023","093400","","","PWS214 Lahaina TP Vault C","380-62890-1"
+"MWHSample","380-62890-3","380-62890-1","HI0000214","TP050","021","LABMWH","STATE","GE","RT","N","100","09/12/2023","113900","","","PWS214 Kanaha Tank EPD","380-62890-1"
+"MWHSample","380-62890-4","380-62890-1","HI0000214","TP050","021","LABMWH","STATE","GE","RT","N","100","09/12/2023","121100","","","PWS214 Waipuka Tank EPD","380-62890-1"
+"MWHSample","380-62890-5","380-62890-1","","NA","NA","LABMWH","STATE","GE","RT","N","100","09/12/2023","093400","","","Trip Blank","380-62890-1"

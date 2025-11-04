@@ -1,0 +1,4 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-66564-1","380-66564-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/09/2023","095700","","","316 Komo Mai St 10092312301","380-66564-1"
+"MWHSample","380-66564-2","380-66564-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/09/2023","103400","","","332 Komo Mai St 10092312305","380-66564-1"
+"MWHSample","380-66564-3","380-66564-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/09/2023","095700","","","Trip Blank","380-66564-1"

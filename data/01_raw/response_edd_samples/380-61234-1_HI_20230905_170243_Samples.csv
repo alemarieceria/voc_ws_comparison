@@ -1,0 +1,6 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free"
+"MWHSample","380-61234-1","380-61234-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/29/2023","094200","",""
+"MWHSample","380-61234-2","380-61234-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/29/2023","102300","",""
+"MWHSample","380-61234-3","380-61234-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/29/2023","100200","",""
+"MWHSample","380-61234-4","380-61234-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/29/2023","104800","",""
+"MWHSample","380-61234-5","380-61234-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","08/29/2023","122200","",""

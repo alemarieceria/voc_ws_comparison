@@ -1,0 +1,8 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-64656-1","380-64656-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","083000","","","PWS 215 Upper Kimo Dr Hyd 790 09262310301","380-64656-1"
+"MWHSample","380-64656-2","380-64656-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","085100","","","PWS 215 Upper Kimo Dr Hyd 796 09262310302","380-64656-1"
+"MWHSample","380-64656-3","380-64656-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","091400","","","PWS 215 Lower Kimo Dr Hyd 392 09262310303","380-64656-1"
+"MWHSample","380-64656-4","380-64656-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","104600","","","PWS 215 Nunu Pl Hyd 639 09262310304","380-64656-1"
+"MWHSample","380-64656-6","380-64656-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","100200","","","PWS 215 Haleakala Hwy Hyd 629 09262310306","380-64656-1"
+"MWHSample","380-64656-7","380-64656-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","103200","","","PWS 215 Lower Kimo Dr Hyd 484 09262310307","380-64656-1"
+"MWHSample","380-64656-8","380-64656-1","","NA","NA","LABMWH","STATE","GE","RT","N","100","09/26/2023","083000","","","Trip Blank","380-64656-1"

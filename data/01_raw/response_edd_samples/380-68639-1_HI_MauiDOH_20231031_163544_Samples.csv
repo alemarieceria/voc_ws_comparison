@@ -1,0 +1,8 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-68639-1","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","094800","","","Lahaina WTP Plant Vault C","380-68639-1"
+"MWHSample","380-68639-2","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","090400","","","Waipuka Tank","380-68639-1"
+"MWHSample","380-68639-3","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","092000","","","Kanaha Tank","380-68639-1"
+"MWHSample","380-68639-4","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","100900","","","Kaakolu St Hyd 158","380-68639-1"
+"MWHSample","380-68639-5","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","102500","","","Kanakea Loop Hyd 208","380-68639-1"
+"MWHSample","380-68639-6","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","103300","","","Kanakea Loop Hyd 210","380-68639-1"
+"MWHSample","380-68639-7","380-68639-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","10/24/2023","090400","","","Trip Blanks","380-68639-1"

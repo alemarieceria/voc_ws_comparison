@@ -1,0 +1,326 @@
+---
+title: "Water Sample ETL Pipeline"
+author: "Alemarie Ceria"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+format: 
+  html:
+    code-overflow: wrap
+    page-layout: full
+    toc: true
+execute:
+  echo: true
+  message: false
+  warning: false
+---
+
+## Webscraping Methodology
+
+### Goal
+
+Webscrape and extract the coordinates of all points within the [Department of Water Supply - Water Advisory Area Address Locator Web App](https://experience.arcgis.com/experience/414545b8dd0b4117a1ec2727007a38df/page/Page).
+
+### Find Where to Pull the Data From
+
+![](assets/img/mdws_water_advisory_area_address_locator_app.png){fig-align="center"}
+
+The legend shows that the water samples come from three spatial layers: hydrant, property, and WTP/tank. To see where the data is being pulled from, we need to find the request URLs using the Chrome DevTools (inspect element tool) by:
+
+1.  Going to the "Network" tab
+2.  Pressing the "Fetch/XHR" button to filter to requests
+3.  Filtering to PBF data, which holds the feature data by inputting "query?f=pbf" into the filter bar
+4.  Clicking one of the queries within the "Name" box
+5.  Inspecting the Request URL to get the base URL
+
+![](assets/img/get_base_urls.png){fig-align="center"}
+
+Here, we can see that the water sample data is being pulled from the `SAMPLES` feature server: <https://services3.arcgis.com/fsrDo0QMPlK9CkZD/arcgis/rest/services/SAMPLES/FeatureServer/>.
+
+![](assets/img/samples_feature_server.png){fig-align="center"}
+
+From there, we can see the three layers listed and their IDs. We can also go to the map viewer to confirm if this is actually the data we want to be requesting. 
+
+### Build Query and Request Water Sample Data
+
+Here are the feature layer base URLs:
+
+1.  Hydrant Water Samples: <https://services3.arcgis.com/fsrDo0QMPlK9CkZD/arcgis/rest/services/SAMPLES/FeatureServer/0>
+2.  Property Water Samples: <https://services3.arcgis.com/fsrDo0QMPlK9CkZD/arcgis/rest/services/SAMPLES/FeatureServer/1>
+3.  WTP/Tank Water Samples: <https://services3.arcgis.com/fsrDo0QMPlK9CkZD/arcgis/rest/services/SAMPLES/FeatureServer/2>
+
+You can see the parameters you can specify in your query by:
+
+1.  Going to the end of one of the feature layers above
+2.  Clicking Query (*Example URL*: <https://services3.arcgis.com/fsrDo0QMPlK9CkZD/ArcGIS/rest/services/SAMPLES/FeatureServer/0/query>)
+
+## ETL Pipeline Overview
+
+The figure below shows the automated `{targets}` pipeline used to
+download, process, and export water sample data from the Maui County
+Department of Water Supply ArcGIS feature service.
+
+### Workflow Summary
+
+1. **Define layers:** The `feature_layers` target lists the three ArcGIS feature server layers (hydrant, property, WTP/tank).
+2. **Fetch counts:** `layer_counts` queries how many records each layer contains.
+3. **Download:** `raw_layer` downloads each dataset (runs as dynamic branches in parallel).
+4. **Tidy:** `tidied_layer` cleans and standardizes each dataset’s columns and location strings.
+5. **Merge:** `merged_ws_sf` combines all tidied layers into a single spatial object (`sf`).
+6. **Export:** `exported_ws_data` writes the final shapefile to `/data/03_output/merged_water_samples/`.
+
+Each circle in the graph represents a target (a single object or file),
+and each square represents **dynamic branches** that run independently for each layer.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+suppressPackageStartupMessages({
+  library(targets)
+  library(tarchetypes)
+})
+library(dplyr)
+library(sf)
+library(visNetwork)
+library(DT)
+library(mapview)
+library(readr)
+library(fs)
+library(htmltools)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+targets::tar_config_set(script = "_targets.R")
+tar_visnetwork(targets_only = TRUE, label = "time")
+```
+
+## Interactive Table
+
+```{r}
+#| echo: false
+processed_ws_sf <- targets::tar_read(merged_ws_sf)
+
+df <- processed_ws_sf |>
+  sf::st_drop_geometry() |>
+  # dplyr::select(source, site, street_name, no_samples) |>
+  dplyr::mutate(no_samples = as.integer(no_samples)) |>
+  dplyr::arrange(source)
+
+create_datatable <- function(df) {
+  DT::datatable(
+    df,
+    rownames = FALSE,
+    filter = "top",
+    extensions = c("Buttons", "FixedHeader"),  # removed "Responsive", "ColReorder", "SearchPanes"
+    class = "stripe hover order-column row-border compact",
+    options = list(
+      dom = "Bfrtip",
+      buttons = list(
+        list(extend = "copy",  text = "Copy"),
+        list(extend = "csv",   text = "Download CSV", filename = "water_samples"),
+        list(extend = "excel", text = "Download Excel", title = "water_samples"),
+        list(extend = "colvis", text = "Show/Hide Columns")
+        # removed colvis button
+      ),
+      pageLength = 5,
+      lengthMenu = list(c(10, 20, 50, 100, -1), c("10", "20", "50", "100", "All")),
+      fixedHeader = TRUE,
+      scrollX = TRUE,
+      searchHighlight = TRUE
+    )
+  )
+}
+
+create_datatable(df)
+```
+
+## Interactive Map
+
+```{r}
+#| echo: false
+#| fig-height: 10
+mapview::mapview(processed_ws_sf, legend = FALSE, zcol = "original_location_str")
+```
+
+## Reproducibility
+
+This project uses **`renv`** for dependency management. 
+
+### Restore Environtment
+
+To reproduce this environment:
+
+```{r}
+#| eval: false
+renv::restore()
+```
+
+### Session Information and Dependencies
+
+```{r}
+#| echo: false
+#| code-fold: true
+#| code-summary: Details
+cat("Project directory:", here::here(), "\n")
+sessionInfo()
+```
+
+For the complete dependency list, see the `renv.lock` file.
+
+### Environment Status 
+
+```{r}
+#| echo: false
+renv::status()
+```
+
+## Next Step: Parse Results
+
+```{r}
+#| echo: false
+#| eval: false
+df |> 
+  slice(4) |> 
+  select(source, original_location_str, site, no_samples, results) |> 
+  create_datatable()
+```
+
+```{r}
+#| echo: false
+#| eval: false
+## ---------- helpers ----------
+.standardize_key <- function(x) {
+  x <- trimws(x)
+  x <- gsub("\\s+", "_", x)
+  x <- gsub("[^A-Za-z0-9_]", "", x)
+  x <- tolower(x)
+  x <- if (identical(x, "m_c_l")) "mcl" else x
+  x <- if (identical(x, "r_l"))   "rl"  else x
+  x
+}
+
+.normalize_results <- function(txt) {
+  if (is.na(txt) || !nzchar(txt)) return("")
+  txt <- gsub("(?i)</?p\\s*>", "||", txt, perl = TRUE)
+  txt <- gsub("(?i)<br\\s*/?>", "||", txt, perl = TRUE)
+  txt <- gsub("\\|\\|+", "||", txt)
+  txt <- gsub("\\s+", " ", txt)
+  trimws(txt)
+}
+
+.split_into_samples <- function(txt_norm) {
+  if (!nzchar(txt_norm)) return(character())
+  # split BEFORE each "Sample Date:"
+  out <- strsplit(txt_norm, "\\|\\|(?=\\s*Sample\\s*Date\\s*:\\s*)", perl = TRUE)[[1]]
+  out <- trimws(out)
+  out[nzchar(out) & grepl("(?i)Sample\\s*Date\\s*:", out, perl = TRUE)]
+}
+
+.parse_block_kv <- function(block) {
+  # split by our "||" delimiter; keep "Key: Value" tokens
+  tokens <- strsplit(block, "\\|\\|", perl = TRUE)[[1]]
+  tokens <- trimws(tokens)
+  tokens <- tokens[nzchar(tokens) & grepl(":", tokens, fixed = TRUE)]
+  if (!length(tokens)) return(as.data.frame(list(), stringsAsFactors = FALSE))
+
+  keys  <- character(0)
+  vals  <- character(0)
+
+  for (t in tokens) {
+    m <- regexpr(":", t, fixed = TRUE)
+    if (m[1] > 0) {
+      key <- substr(t, 1, m[1] - 1) |> trimws() |> .standardize_key()
+      val <- substr(t, m[1] + 1, nchar(t)) |> trimws()
+      # keep first occurrence of duplicate keys
+      if (!(key %in% keys)) {
+        keys <- c(keys, key)
+        vals <- c(vals, val)
+      }
+    }
+  }
+
+  if (!length(keys)) return(as.data.frame(list(), stringsAsFactors = FALSE))
+  setNames(as.data.frame(as.list(as.vector(vals)), stringsAsFactors = FALSE), keys)
+}
+
+.rbind_fill <- function(dfs) {
+  if (!length(dfs)) return(as.data.frame(list(), stringsAsFactors = FALSE))
+  # union all names
+  alln <- unique(unlist(lapply(dfs, names)))
+  # add missing cols as NA_character_
+  dfs2 <- lapply(dfs, function(d) {
+    miss <- setdiff(alln, names(d))
+    for (m in miss) d[[m]] <- NA_character_
+    d[alln]
+  })
+  do.call(rbind, dfs2)
+}
+
+.parse_mmddyyyy <- function(x) {
+  # best-effort date parse for m/d/Y (1 or 2 digit month/day)
+  good <- grepl("^\\s*\\d{1,2}/\\d{1,2}/\\d{2,4}\\s*$", x)
+  out <- rep(NA, length(x))
+  out[good] <- as.Date(x[good], format = "%m/%d/%Y")
+  out
+}
+
+## ---------- main parsers ----------
+parse_results_to_long_row <- function(results_text) {
+  txt_norm <- .normalize_results(results_text)
+  blocks   <- .split_into_samples(txt_norm)
+  if (!length(blocks)) return(as.data.frame(list(), stringsAsFactors = FALSE))
+
+  parsed_list <- lapply(blocks, .parse_block_kv)
+  out <- .rbind_fill(parsed_list)
+
+  if ("sample_date" %in% names(out)) {
+    out$sample_date <- .parse_mmddyyyy(out$sample_date)
+  }
+  out
+}
+
+# df: original data.frame
+# results_col: column name (string) that contains the HTML-like blob
+# keep_cols: columns to carry along to each parsed row for provenance
+parse_results_to_long <- function(df,
+                                  results_col = "results",
+                                  keep_cols = c("source", "original_location_str", "site", "no_samples")) {
+  if (!nrow(df)) return(df[FALSE, keep_cols, drop = FALSE])
+
+  keep_cols <- intersect(keep_cols, names(df))
+  res_name  <- results_col
+
+  rows <- vector("list", nrow(df))
+  for (i in seq_len(nrow(df))) {
+    base_part <- df[i, keep_cols, drop = FALSE]
+    parsed    <- parse_results_to_long_row(df[i, res_name])
+    if (!nrow(parsed)) {
+      rows[[i]] <- cbind(base_part, parsed)  # empty -> returns base_part only
+    } else {
+      # recycle base_part across parsed rows
+      base_rep <- base_part[rep(1, nrow(parsed)), , drop = FALSE]
+      rows[[i]] <- cbind(base_rep, parsed)
+    }
+  }
+  out <- do.call(rbind, rows)
+
+  # nice column order: provenance first, then common parsed fields if present
+  common <- c("sample_date","lab_sample_id","contaminant","analyte",
+              "detection_limit","mcl","result","qualifier","rl","mdl")
+  parsed_cols <- intersect(common, names(out))
+  other_cols  <- setdiff(names(out), c(keep_cols, parsed_cols))
+  out[c(keep_cols, parsed_cols, other_cols)]
+}
+```
+
+```{r}
+#| echo: false
+#| eval: false
+df |>
+  (\(x) x[4, c("source","original_location_str","site","no_samples","results"), drop = FALSE])() |>
+  parse_results_to_long(results_col = "results",
+                        keep_cols   = c("source","original_location_str","site","no_samples")) |> 
+  create_datatable()
+```

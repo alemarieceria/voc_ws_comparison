@@ -1,0 +1,8 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-73212-1","380-73212-1","HI0000247","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","124400","","","PWS 247 Kulamanu Cr Hyd 635 11292311001","380-73212-1"
+"MWHSample","380-73212-2","380-73212-1","HI0000247","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","122200","","","PWS 247 Kulamanu Cr Hyd 651 11292311002","380-73212-1"
+"MWHSample","380-73212-3","380-73212-1","HI0000215","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","114600","","","PWS 215 Naalae SP 284 11292311004","380-73212-1"
+"MWHSample","380-73212-4","380-73212-1","HI0000215","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","105600","","","PWS 215 Waiohuli Tank 11292311005","380-73212-1"
+"MWHSample","380-73212-5","380-73212-1","HI0000215","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","101400","","","PWS 215 Ulupalakua SP 1 11292311006","380-73212-1"
+"MWHSample","380-73212-6","380-73212-1","HI0000215","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","094000","","","PWS 215 Kanaio Tank 11292311007","380-73212-1"
+"MWHSample","380-73212-7","380-73212-1","","N/A","N/A","LABMWH","STATE","GE","RT","N","100","11/29/2023","094000","","","Trip Blank","380-73212-1"

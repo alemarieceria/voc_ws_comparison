@@ -1,0 +1,5 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-65961-1","380-65961-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","10/04/2023","090500","","","Lower Kimo Dr Hyd 392 10042313901","380-65961-1"
+"MWHSample","380-65961-2","380-65961-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","10/04/2023","102600","","","Ainakula Rd Hyd 481 10042313902","380-65961-1"
+"MWHSample","380-65961-3","380-65961-1","HI0000215","NA","NA","LABMWH","STATE","GE","RT","N","100","10/04/2023","094900","","","Kulalani Dr Hyd 415 10042313903","380-65961-1"
+"MWHSample","380-65961-4","380-65961-1","","NA","NA","LABMWH","STATE","GE","RT","N","100","10/04/2023","090500","","","Trip Blank","380-65961-1"

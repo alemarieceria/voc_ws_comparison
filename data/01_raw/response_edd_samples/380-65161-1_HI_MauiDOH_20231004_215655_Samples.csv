@@ -1,0 +1,6 @@
+"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
+"MWHSample","380-65161-1","380-65161-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","09/29/2023","091400","","","Kupuohi St Hyd 418 09292314501","380-65161-1"
+"MWHSample","380-65161-2","380-65161-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","09/29/2023","101200","","","Lui St Hyd 379 09292314502","380-65161-1"
+"MWHSample","380-65161-3","380-65161-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","09/29/2023","103800","","","Komo Mai St Hyd 440 09292314503","380-65161-1"
+"MWHSample","380-65161-4","380-65161-1","HI0000214","NA","NA","LABMWH","STATE","GE","RT","N","100","09/29/2023","111700","","","Leialii Pkwy Hyd 294 09292314504","380-65161-1"
+"MWHSample","380-65161-5","380-65161-1","","NA","NA","LABMWH","STATE","GE","RT","N","100","09/29/2023","091400","","","Trip Blank","380-65161-1"
