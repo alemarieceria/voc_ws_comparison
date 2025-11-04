@@ -31,14 +31,14 @@ voc_ws_comparison/
 │  │  └─ tidy_ws_layers.R
 │  └─ 03_exporting/
 │     └─ export_ws_layer.R
+├─ docs/                                                    # Files to build website that displays an interactive workflow
 ├─ renv/
-├─ report_files/
+├─ _quarto.yml                                              # Quarto website
 ├─ _targets.R                                               # Main targets pipeline; outputs final datasets and report
 ├─ _targets.yaml
 ├─ .gitignore
 ├─ .Rprofile
 ├─ README.md
 ├─ renv.lock                                                # Dependencies tracked by `{renv}`
-├─ report.html                                              # Shareable worflow doc
 └─ report.qmd                                               # Workflow outputted by ETL pipeline
 ```
