@@ -18,7 +18,7 @@ output-file: index.html
 
 ### Goal
 
-Webscrape and extract the coordinates of all points within the [Department of Water Supply - Water Advisory Area Address Locator Web App](https://experience.arcgis.com/experience/414545b8dd0b4117a1ec2727007a38df/page/Page).
+Webscrape and extract the coordinates of all points within the Department of Water Supply - Water Advisory Area Address Locator [Web App](https://experience.arcgis.com/experience/414545b8dd0b4117a1ec2727007a38df/page/Page).
 
 ### Tracing Web App Requests to APIs
 
@@ -68,10 +68,10 @@ Department of Water Supply ArcGIS feature service.
 3. **Download:** `raw_layer` downloads each dataset (runs as dynamic branches in parallel).
 4. **Tidy:** `tidied_layer` cleans and standardizes each dataset’s columns and location strings.
 5. **Merge:** `merged_ws_sf` combines all tidied layers into a single spatial object (`sf`).
-6. **Export:** `exported_ws_data` writes the final shapefile to `/data/03_output/merged_water_samples/`.
+6. **Export:** `exported_ws_as_x` writes the final datasets to[ `/data/03_output/`](https://github.com/alemarieceria/voc_ws_comparison/tree/main/data/03_output).
 
 Each circle in the graph represents a target (a single object or file),
-and each square represents **dynamic branches** that run independently for each layer. See `R/` folder in repository for scripts used in pipeline.
+and each square represents **dynamic branches** that run independently for each layer. See [`R/`](https://github.com/alemarieceria/voc_ws_comparison/tree/main/R) folder in repository for scripts used in pipeline.
 
 ```{r}
 #| echo: false
