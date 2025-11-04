@@ -1,6 +1,0 @@
-"Sample Indicator","Lab Sample No","Report No","PWS ID","Fac ID","Samp Pt No","Lab ID","Cert Agency","Samp Category","Samp Type","Compliance","Samp Vol","Collect Date","Collect Time","Sampler Name","Chlorine Free","Sample Identification","COC #"
-"MWHSample","380-63207-1","380-63207-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","09/13/2023","090800","","","PWS 215 Kulamanu Cr Hyd 637","380-63207-1"
-"MWHSample","380-63207-2","380-63207-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","09/13/2023","093500","","","PWS 215 Kulamanu Cr Hyd 427","380-63207-1"
-"MWHSample","380-63207-3","380-63207-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","09/13/2023","100600","","","PWS 215 Kaui PI SP 174","380-63207-1"
-"MWHSample","380-63207-4","380-63207-1","HI0000215","TP003","001","LABMWH","STATE","GE","RT","N","100","09/13/2023","103300","","","PWS 215 Upu Hyd 336","380-63207-1"
-"MWHSample","380-63207-5","380-63207-1","","NA","NA","LABMWH","STATE","GE","RT","N","100","09/13/2023","090800","","","Trip Blank","380-63207-1"

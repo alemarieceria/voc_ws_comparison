@@ -145,38 +145,6 @@ create_datatable(df)
 mapview::mapview(processed_ws_sf, legend = FALSE, zcol = "original_location_str")
 ```
 
-## Reproducibility
-
-This project uses **`renv`** for dependency management. 
-
-### Restore Environtment
-
-To reproduce this environment:
-
-```{r}
-#| eval: false
-renv::restore()
-```
-
-### Session Information and Dependencies
-
-```{r}
-#| echo: false
-#| code-fold: true
-#| code-summary: Details
-cat("Project directory:", here::here(), "\n")
-sessionInfo()
-```
-
-For the complete dependency list, see the `renv.lock` file.
-
-### Environment Status 
-
-```{r}
-#| echo: false
-renv::status()
-```
-
 ## Next Step: Parse Results
 
 ```{r}
@@ -325,3 +293,36 @@ df |>
                         keep_cols   = c("source","original_location_str","site","no_samples")) |> 
   create_datatable()
 ```
+
+## Reproducibility
+
+This project uses **`renv`** for dependency management. 
+
+### Restore Environtment
+
+To reproduce this environment:
+
+```{r}
+#| eval: false
+renv::restore()
+```
+
+### Session Information and Dependencies
+
+```{r}
+#| echo: false
+#| code-fold: true
+#| code-summary: Details
+cat("Project directory:", here::here(), "\n")
+sessionInfo()
+```
+
+For the complete dependency list, see the `renv.lock` file.
+
+### Environment Status 
+
+```{r}
+#| echo: false
+renv::status()
+```
+
