@@ -2,14 +2,15 @@
 
 ## Goals
 
-1. Get coordinates for each water sampling location                  [X]
-2. Convert results to long format                                    [ ]
-3. Analyze/compare what Maui County detected vs. what we detected    [ ]
-4. Summarize detections per location                                 [ ]
-3. Create a timeline                                                 [ ]
+1. Get coordinates for each water sampling location [X]
+2. Convert results to long format [ ]
+3. Analyze/compare what Maui County detected vs. what we detected [ ]
+4. Summarize detections per location [ ]
+3. Create a timeline [ ]
 
 ## Project Structure
 
+```text
 voc_ws_comparison/
 ├─ _targets/
 ├─ assets/
@@ -40,3 +41,4 @@ voc_ws_comparison/
 ├─ renv.lock                                                # Dependencies tracked by `{renv}`
 ├─ report.html                                              # Shareable worflow doc
 └─ report.qmd                                               # Workflow outputted by ETL pipeline
+```
