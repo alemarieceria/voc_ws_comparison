@@ -102,8 +102,8 @@ Outputs:
 
 1. `docs/index.html` (Website)
 2. `data/02_interim/2025_11_03_raw_ws_locations_sfs_list.RData` (Queried data)
-3. `data/03_output/standardized_ws_names_and_locations.csv` (Processed dataset)
-4. `data/03_output/standardized_ws_names_and_locations.gpkg` (Processed spatial layer)
+3. `data/03_output/2025_11_03_standardized_ws_names_and_locations.csv` (Processed dataset)
+4. `data/03_output/2025_11_03_standardized_ws_names_and_locations.gpkg` (Processed spatial layer)
 
 ## Contact
 
