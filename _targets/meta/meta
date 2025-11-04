@@ -6,8 +6,7 @@ layer_counts|stem|f44e758c8edf986d|4933b709a500daec|3dfab28fd152a23d|-1169466240
 tidied_layers|stem|754dda9d38cf4f9a|1a98fe0610c4797e|321e018989b9a866|1351035380||t20396.0999030828s|s87270b|87270|rds|local|vector|||0.09||
 merged_ws_sf|stem|470aba09e098df4f|e13c6bcb55731de7|a6c76e4f5cdc918c|-46985811||t20396.0999197316s|s83656b|83656|rds|local|vector|||1.36||
 exported_ws_data|stem|bf088ab805a5c7a6|cab119413ec4838d|cf7725b64a140cd4|501126185|data/03_output/mc_water_samples/standardized_ws_names_and_locations.gpkg|t20396.1182446031s|s909312b|909312|file|local|vector|||0.29||
-exported_ws_as_gpkg|stem|b09e3cb78fb7d6b1|fccecc5e06100c25|cf7725b64a140cd4|260034725|data/03_output/standardized_ws_names_and_locations.gpkg|t20396.1975282599s|s909312b|909312|file|local|vector|||0.18||
-exported_ws_as_csv|stem|08d5f59e833de599|618b7d5edd969e4e|0080a1b0b14ec4fc|2037076075||t0s|s0b|0|file|local|vector|||0.06||
+report|stem|9bc76b326b15fec3|b1d82599dc169a97|0080a1b0b14ec4fc|787668912|docs/index.html*report.qmd|t20396.3782072804s|s7363487b|7363487|file|local|vector|||97.69||
 get_suffixes|function|4e89f7bf5778cdbb
 merge_and_transform_ws_layers|function|8400858fe6348027
 extract_and_standardize_suffix|function|33405945c9fcf1f6
@@ -22,4 +21,5 @@ tidy_property_ws_df|function|03bf5bbce1f9c4f9
 tidy_wtp_tk_ws_df|function|9ec6ccaf9a06d31b
 tidy_hydrant_ws_df|function|4b08fdb7836bd4ff
 tidy_single_ws_layer|function|2e8bbf6c85938918
-report|stem|9bc76b326b15fec3|b1d82599dc169a97|0080a1b0b14ec4fc|787668912|docs/index.html*report.qmd|t20396.3782072804s|s7363487b|7363487|file|local|vector|||97.69||
+exported_ws_as_csv|stem|08d5f59e833de599|10c0a676030ad2d3|0080a1b0b14ec4fc|2037076075||t0s|s0b|0|file|local|vector|||0.05||
+exported_ws_as_gpkg|stem|516663369b504704|f07c0b4bf3ff6392|cf7725b64a140cd4|260034725|data/03_output/2025_11_04_standardized_ws_names_and_locations.gpkg|t20396.417425125s|s909312b|909312|file|local|vector|||0.11||

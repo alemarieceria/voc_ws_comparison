@@ -68,7 +68,9 @@ list(
     exported_ws_as_gpkg,
     export_ws_sf(
       sf_obj = merged_ws_sf,
-      out_path = "data/03_output/standardized_ws_names_and_locations.gpkg"
+      out_path = glue::glue(
+        "data/03_output/{format(Sys.Date(), '%Y_%m_%d')}_standardized_ws_names_and_locations.gpkg"
+      )
     ),
     format = "file"
   ),
@@ -76,7 +78,11 @@ list(
     exported_ws_as_csv,
     write.csv(
       merged_ws_sf,
-      here::here("data/03_output/standardized_ws_names_and_locations.csv"),
+      here::here(
+        glue::glue(
+        "data/03_output/{format(Sys.Date(), '%Y_%m_%d')}_standardized_ws_names_and_locations.csv"
+      )
+      ),
       row.names = FALSE
     ),
     format = "file"
