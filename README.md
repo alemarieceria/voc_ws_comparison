@@ -4,26 +4,24 @@
 
 <p>
   <a href="https://alemarieceria.github.io/voc_ws_comparison/index.html">
-    <img alt="View Live Report" src="https://img.shields.io/badge/%F0%9F%93%9A%20View%20Live%20Report-black">
+    <img alt="View Live Report" src="https://img.shields.io/badge/%F0%9F%93%9A%20View%20Live%20Report-yellow">
   </a>
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=review_feedback.yml">
     <img alt="Give Feedback" src="https://img.shields.io/badge/%F0%9F%93%9D%20Give%20Feedback-blue">
-  </a>
+  </a>  
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=bug.yml">
     <img alt="Report a Bug" src="https://img.shields.io/badge/%F0%9F%90%9B%20Report%20a%20Bug-red">
-  </a>
+  </a>  
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=request.yml">
     <img alt="Request an Analysis" src="https://img.shields.io/badge/%F0%9F%93%8A%20Request%20an%20Analysis-purple">
-  </a>
+  </a  
   <a href="https://github.com/alemarieceria/voc_ws_comparison/discussions/new?category=q-a">
     <img alt="Ask a Question" src="https://img.shields.io/badge/%F0%9F%93%96%20Ask%20a%20Question-green">
-  </a>
+  </a>  
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=task.yml">
-    <img alt="Create a Task" src="https://img.shields.io/badge/%F0%9F%A7%B9%20Create%20a%20Task-grey">
+    <img alt="Create a Task" src="https://img.shields.io/badge/%F0%9F%A7%B9%20Create%20a%20Task-orange">
   </a>
 </p>
-
----
 
 ## Project Structure
 
@@ -60,38 +58,43 @@ voc_ws_comparison/
 └─ report.qmd                        # Report source (rendered by pipeline)
 ```
 
----
-
 ## Goals
 - [x] Get coordinates for each water sampling location  
-- [ ] Convert results to long format  
+- [ ] Parse and convert results to long format  
 - [ ] Analyze/compare Maui County detections vs. our detections  
 - [ ] Summarize detections per location  
 - [ ] Create a timeline
 
----
-
-## How to Review
-1. Open the **Live report** (link above).
-2. If something looks off or you have suggestions, click **“Give Feedback”** (blue button).
-3. Describe the page/section and your feedback in plain language. Screenshots help!
-4. For questions, use **“Ask a Question”** (green button).
-
-Labels we use:  
-`review` (feedback), `analysis`, `bug`, `improvement`, `data-request`, `question`  
-Status: `status:needs-triage` → `status:in-progress` → `status:needs-review` → `status:done`  
-Priority: `priority:P1` (must do), `P2` (should do), `P3` (nice to have)
-
----
-
 ## Reproduce Locally
 
-In console:
+### 1) Clone the repository
+> Pick **one** method.
+
+**HTTPS (easiest)**
+
+```bash
+git clone https://github.com/alemarieceria/voc_ws_comparison.git
+cd voc_ws_comparison
+```
+
+**SSH (if you’ve set up SSH keys)**
+
+```bash
+git clone git@github.com:alemarieceria/voc_ws_comparison.git
+cd voc_ws_comparison
+```
+
+### 2) Set up R environment
+
+In R / RStudio / Positron:
 
 ```{r}
-# Restore environment and install exact versions of dependencies
 renv::restore()
-# Rebuild data pipeline
+```
+
+### 3) Build the pipeline and report
+
+```{r}
 targets::tar_make()
 ```
 
