@@ -1,27 +1,8 @@
 # Maui County Water Samples
 
-## Quick Links
+## Project Description
 
-<p>
-  <a href="https://alemarieceria.github.io/voc_ws_comparison/index.html">
-    <img alt="View Live Report" src="https://img.shields.io/badge/%F0%9F%93%9A%20View%20Live%20Report-yellow">
-  </a>
-  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=review_feedback.yml">
-    <img alt="Give Feedback" src="https://img.shields.io/badge/%F0%9F%93%9D%20Give%20Feedback-blue">
-  </a>
-  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=request.yml">
-    <img alt="Request an Analysis" src="https://img.shields.io/badge/%F0%9F%93%8A%20Request%20an%20Analysis-purple">
-  </a>  
-  <a href="https://github.com/alemarieceria/voc_ws_comparison/discussions/new?category=q-a">
-    <img alt="Ask a Question" src="https://img.shields.io/badge/%F0%9F%93%96%20Ask%20a%20Question-green">
-  </a>  
-  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=task.yml">
-    <img alt="Create a Task" src="https://img.shields.io/badge/%F0%9F%A7%B9%20Create%20a%20Task-orange">
-  </a>  
-  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=bug.yml">
-    <img alt="Report a Bug" src="https://img.shields.io/badge/%F0%9F%90%9B%20Report%20a%20Bug-red">
-  </a>  
-</p>
+This project compiles and standardizes post-fire volatile organic compound (VOC) water sampling data from Maui County to enable comparison with our lab’s independent tap water sampling conducted following the August 2023 Lahaina fires. Each dataset contains results for a suite of VOCs (e.g., benzene, toluene, ethylbenzene, xylene) analyzed across multiple sample locations and dates.
 
 ## Project Structure
 
@@ -58,12 +39,35 @@ voc_ws_comparison/
 └─ report.qmd                        # Report source (rendered by pipeline)
 ```
 
-## Goals
-- [x] Get coordinates for each water sampling location  
-- [ ] Parse and convert results to long format  
-- [ ] Analyze/compare Maui County detections vs. our detections  
-- [ ] Summarize detections per location  
-- [ ] Create a timeline
+## Tasks
+
+- [x] Extract sample coordinates from Maui County’s Water Advisory Area Address Locator web app  
+- [ ] Clean, standardize, and parse VOC results into long format  
+- [ ] Compare spatial and temporal patterns between County and lab samples  
+- [ ] Visualize detections and summarize findings for communication (maps, timeline plots, poster graphics)
+
+## Quick Links
+
+<p>
+  <a href="https://alemarieceria.github.io/voc_ws_comparison/index.html">
+    <img alt="View Live Report" src="https://img.shields.io/badge/%F0%9F%93%9A%20View%20Live%20Report-yellow">
+  </a>
+  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=review_feedback.yml">
+    <img alt="Give Feedback" src="https://img.shields.io/badge/%F0%9F%93%9D%20Give%20Feedback-blue">
+  </a>
+  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=request.yml">
+    <img alt="Request an Analysis" src="https://img.shields.io/badge/%F0%9F%93%8A%20Request%20an%20Analysis-purple">
+  </a>  
+  <a href="https://github.com/alemarieceria/voc_ws_comparison/discussions/new?category=q-a">
+    <img alt="Ask a Question" src="https://img.shields.io/badge/%F0%9F%93%96%20Ask%20a%20Question-green">
+  </a>  
+  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=task.yml">
+    <img alt="Create a Task" src="https://img.shields.io/badge/%F0%9F%A7%B9%20Create%20a%20Task-orange">
+  </a>  
+  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=bug.yml">
+    <img alt="Report a Bug" src="https://img.shields.io/badge/%F0%9F%90%9B%20Report%20a%20Bug-red">
+  </a>  
+</p>
 
 ## Reproduce Locally
 
