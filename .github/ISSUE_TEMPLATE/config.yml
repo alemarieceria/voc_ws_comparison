@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask a question (Discussions)
+    url: https://github.com/alemarieceria/voc_ws_comparison/discussions/new?category=q-a
+    about: Use Q&A for general questions or ideas.

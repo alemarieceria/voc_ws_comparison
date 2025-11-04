@@ -1,0 +1,72 @@
+name: "🧹 Task / improvement"
+description: Maintenance, refactor, or small workflow improvement
+labels: ["improvement", "status:needs-triage"]
+title: "improvement: "
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What needs to be done?
+      description: Be concise—what’s the change or cleanup?
+      placeholder: "Refactor suffix parser; add preview CSV schema export"
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why?
+      description: Impact on correctness, performance, clarity, or workflow.
+      placeholder: "Reduces duplicate code and fixes edge cases for 'LN'/'LANE'."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope (pick all that apply)
+      options:
+        - label: Code cleanup / refactor
+        - label: Performance improvement
+        - label: CI / pipeline reliability
+        - label: Docs update
+
+  - type: input
+    id: area
+    attributes:
+      label: Area (optional)
+      placeholder: "area:etl, area:parsing, area:spatial, area:targets, area:viz, area:quarto"
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: Subtasks
+      description: A short checklist to make the work concrete.
+      placeholder: "- [ ] Update function\n- [ ] Add unit test\n- [ ] Update docstring/README"
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Definition of Done
+      placeholder: "- Tests pass / pipeline runs\n- Behavior verified on sample data\n- Docs/README updated"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P1 - must do
+        - P2 - should do
+        - P3 - nice to have
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Links (optional)
+      placeholder: "Related issues/PRs, screenshots, benchmarks"

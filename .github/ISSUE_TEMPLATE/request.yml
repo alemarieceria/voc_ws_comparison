@@ -1,0 +1,26 @@
+name: "📊 Analysis request"
+description: New analysis or improvement
+labels: ["analysis", "status:needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Question / decision we’re supporting
+      placeholder: "e.g., Compare VOC detections by site vs county records"
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      placeholder: "Datasets, methods, metrics, outputs (tables/maps)"
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: ["P1 - must have", "P2 - should have", "P3 - could have"]
+    validations: { required: true }
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- Chart/table/map produced\n- Checked against sample data\n- Added to report"
