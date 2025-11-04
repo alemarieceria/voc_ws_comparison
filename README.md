@@ -8,19 +8,19 @@
   </a>
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=review_feedback.yml">
     <img alt="Give Feedback" src="https://img.shields.io/badge/%F0%9F%93%9D%20Give%20Feedback-blue">
-  </a>  
-  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=bug.yml">
-    <img alt="Report a Bug" src="https://img.shields.io/badge/%F0%9F%90%9B%20Report%20a%20Bug-red">
-  </a>  
+  </a>
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=request.yml">
     <img alt="Request an Analysis" src="https://img.shields.io/badge/%F0%9F%93%8A%20Request%20an%20Analysis-purple">
-  </a  
+  </a>  
   <a href="https://github.com/alemarieceria/voc_ws_comparison/discussions/new?category=q-a">
     <img alt="Ask a Question" src="https://img.shields.io/badge/%F0%9F%93%96%20Ask%20a%20Question-green">
   </a>  
   <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=task.yml">
     <img alt="Create a Task" src="https://img.shields.io/badge/%F0%9F%A7%B9%20Create%20a%20Task-orange">
-  </a>
+  </a>  
+  <a href="https://github.com/alemarieceria/voc_ws_comparison/issues/new?template=bug.yml">
+    <img alt="Report a Bug" src="https://img.shields.io/badge/%F0%9F%90%9B%20Report%20a%20Bug-red">
+  </a>  
 </p>
 
 ## Project Structure
@@ -100,10 +100,10 @@ targets::tar_make()
 
 Outputs:
 
-1. `docs/index.html`
-2. `data/02_interim/2025_11_03_raw_ws_locations_sfs_list.RData`
-3. `data/03_output/standardized_ws_names_and_locations.csv`
-4. `data/03_output/standardized_ws_names_and_locations.gpkg`
+1. `docs/index.html` (Website)
+2. `data/02_interim/2025_11_03_raw_ws_locations_sfs_list.RData` (Queried data)
+3. `data/03_output/standardized_ws_names_and_locations.csv` (Processed dataset)
+4. `data/03_output/standardized_ws_names_and_locations.gpkg` (Processed spatial layer)
 
 ## Contact
 
