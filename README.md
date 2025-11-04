@@ -1,4 +1,4 @@
-# Maui County Water Samples
+# Maui County VOC Water Sampling Comparison
 
 ## Project Description
 
@@ -90,7 +90,7 @@ cd voc_ws_comparison
 
 ### 2) Set up R environment
 
-In R / RStudio / Positron:
+In R/RStudio/Positron/VSCode:
 
 ```{r}
 renv::restore()
