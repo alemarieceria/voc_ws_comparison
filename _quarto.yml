@@ -1,0 +1,8 @@
+# _quarto.yml
+project:
+  output-dir: docs
+  execute-dir: project
+  
+format:
+  html:
+    self-contained: true

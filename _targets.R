@@ -82,6 +82,6 @@ list(
     format = "file"
   ),
 
-  # Report Target
+  # Report target
   tar_quarto(report, "report.qmd")
 )
